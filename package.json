@@ -1,0 +1,21 @@
+{
+  "name": "file-upload-with-eset-av-scan",
+  "version": "1.0.0",
+  "description": "POC to show file upload with AV scan using ESET",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mda",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.4.0",
+    "md5": "^2.2.1",
+    "node-cmd": "^3.0.0",
+    "opentype.js": "^0.7.3",
+    "stream-buffers": "^3.0.1",
+    "uuid": "^3.2.1"
+  }
+}

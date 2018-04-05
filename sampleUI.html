@@ -1,0 +1,32 @@
+<html>
+  <body>
+    <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:8000/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type='submit' value='Upload!' />
+    </form>
+    <form ref='createForm'
+      id='createForm'
+      action="http://localhost:8001/create"
+      method="post">
+        <textarea name="fileText" cols="80">
+        </textarea>
+        <input type="text" name="fileName" />
+        <input type="submit" value="Create!" />
+    </form>
+
+    <form ref='checkForm'
+          id='checkForm'
+          action="http://localhost:8002/check"
+          method="post">
+        <input type="text" name="fileName" />
+        <input type="submit" value="CHECK..." />
+    </form>
+   <div>EICAR test string:
+       <br/>X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
+   </div>
+  </body>
+</html>

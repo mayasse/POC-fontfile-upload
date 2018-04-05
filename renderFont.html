@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/opentype.js@latest/dist/opentype.min.js"></script>
+    <script>
+        function renderFont() {
+            var previewCtx = document.getElementById('previewCanvas').getContext('2d');
+            var textToRender = document.getElementById('textToRender').value;
+            var fontMd5 = document.getElementById(('fontMd5')).value;
+            // alert(textToRender);
+            // alert(fontMd5);
+            // alert(previewCtx);
+            previewCtx.clearRect(0, 0, 940, 300);
+            opentype.load('file/' + fontMd5, function(err, font) {
+                if (err) {
+                    alert('Font could not be loaded: ' + err);
+                } else {
+                    // Construct a Path object containing the letter shapes of the given text.
+                    // The other parameters are x, y and fontSize.
+                    // Note that y is the position of the baseline.
+                    // var path = font.getPath('Hello, World!', 0, 150, 72);
+                    // If you just want to draw the text you can also use font.draw(ctx, text, x, y, fontSize).
+                    // path.draw(ctx);
+                    font.draw(previewCtx, textToRender, 0, 200, 72);
+                }
+            });
+        }
+    </script>
+</head>
+  <body>
+    <canvas id="previewCanvas" width="940px" height="300px" class="text" style="border:outset;border-color:teal"></canvas>
+    <hr color="blue" style="width:940px"/>
+    <div style="border:groove;border-color:green;width:940px;height:100px">
+        Text to render:<input type="text" id="textToRender" size="128" value="The quick brown fox jumped over the lazy dog." />
+        <br/>
+        Font ID: <input type="text" id="fontMd5" value="7f34fb6a4e986c16aeced2bd390347e4"/>
+        <br/>
+        <button onclick="javascript:renderFont();">Render Font</button>
+    </div>
+  </body>
+</html>
